@@ -129,7 +129,7 @@ This Guidance can be deployed in any AWS region that supports all the required s
 
 2. Navigate to the project directory:
    ```bash
-   cd sample-capacity-block-manager
+   cd guidance-for-automated-management-of-aws-capacity-blocks
    ```
 
 3. Install dependencies:
@@ -176,8 +176,7 @@ This Guidance can be deployed in any AWS region that supports all the required s
 4. Test API connectivity:
    ```bash
    # Retrieve API key
-   SECRET_NAME=$(aws ssm get-parameter --name /cbm/CapacityBlockManagerStack/apiSecretName --query "Parameter.Value" --output text)
-   API_KEY=$(aws secretsmanager get-secret-value --secret-id $SECRET_NAME --query "SecretString" --output text | jq -r '.api_key')
+   API_KEY=$(aws secretsmanager get-secret-value --secret-id "/cbm/CapacityBlockManagerStack/apiSecretName" --query "SecretString" --output text | jq -r '.api_key')
    
    # Get API URL
    API_URL=$(aws ssm get-parameter --name /cbm/CapacityBlockManagerStack/apiUrl --query "Parameter.Value" --output text)
