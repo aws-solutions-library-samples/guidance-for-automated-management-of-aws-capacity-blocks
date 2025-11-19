@@ -129,7 +129,7 @@ This Guidance can be deployed in any AWS region that supports all the required s
 
 2. Navigate to the project directory:
    ```bash
-   cd sample-capacity-block-manager
+   cd guidance-for-automated-management-of-aws-capacity-blocks
    ```
 
 3. Install dependencies:
